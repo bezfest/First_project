@@ -1,6 +1,3 @@
-# if reserved option grey out
-# when table pressed -> display something (hour/payment)
-
 from tkinter import*
 from PIL import ImageTk,Image
 
@@ -45,6 +42,8 @@ table_tra_one.bind("<Button-1>", printme)
 table_tra_two = Label(image = ph_tra_two, bd=0)
 table_tra_two.place(x=554.5,y=156, anchor="center")
 table_tra_two.bind("<Button-1>", printme)
+
+#At the moment only, yet partially working table+
 #3 reservation check
 def tra_three(event):
     reservation_tra_three = Label(image=ph_tra_cb3, bd=0)
@@ -60,7 +59,7 @@ def tabletra():
         table_tra_three_des.place(x=554.5,y=258, anchor="center")
         message = Label(root, image=ph_tra_ty3, bd=0)
         message.place(anchor="center",x=417.5,y=212) #fix Y for 1px (212)
-        message.after(2000,message.destroy)
+        message.after(2000,message.destroy) #Need to make reservation_tra_three label(from tra_three function) disappear as well - no luck yet
     elif var.get() == 0:
         table_tra_three = Label(root,image = ph_tra_three, bd=0)
         table_tra_three.place(x=554.5,y=258, anchor="center")
